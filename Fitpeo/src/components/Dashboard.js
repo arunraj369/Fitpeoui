@@ -22,6 +22,7 @@ const ContentArea = styled.div`
   flex-grow: 1;
   padding: 20px;
   color: white;
+  overflow-x: auto; /* Handle horizontal overflow */
 
   @media (max-width: 768px) {
     padding: 10px;
@@ -33,6 +34,7 @@ const StatsGrid = styled.div`
   grid-template-columns: repeat(5, 1fr);
   gap: 15px;
   margin-bottom: 20px;
+  overflow: hidden; /* Prevent overflow of grid items */
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
@@ -51,6 +53,8 @@ const MainContentGrid = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 20px;
+  margin-bottom: 20px;
+  overflow: hidden; /* Prevent overflow of grid items */
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -62,6 +66,7 @@ const OrdersAndFeedbackGrid = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   margin-top: 20px;
+  overflow: hidden; /* Prevent overflow of grid items */
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -71,7 +76,7 @@ const OrdersAndFeedbackGrid = styled.div`
 const Dashboard = () => {
   return (
     <DashboardWrapper>
-      <Sidebar />
+        <Sidebar />
       <ContentArea>
         <TopBar />
         <StatsGrid>
